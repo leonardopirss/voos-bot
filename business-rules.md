@@ -39,3 +39,25 @@ CREATE TABLE PREFERENCES {
     destination VARCHAR(10),
     AIR_COMPANY VARCHAR (20)
 }
+
+
+## ciclo 
+Scheduler roda às 01:00, 08:00 e 19:00
+        ↓
+Busca preferências ativas no banco
+        ↓
+Para cada preferência:
+        ↓
+Chama Skyscanner /create
+        ↓
+Recebe sessionToken
+        ↓
+Chama Skyscanner /poll/{sessionToken}
+        ↓
+Pega o menor preço retornado
+        ↓
+Compara com preço alvo do usuário
+        ↓
+Salva histórico
+        ↓
+Se preço <= alvo, manda alerta
