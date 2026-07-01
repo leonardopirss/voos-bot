@@ -1,6 +1,7 @@
 package com.bot.pass.service;
 
 import com.bot.pass.dto.Preferences;
+import com.bot.pass.dto.Voos;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -79,6 +80,26 @@ public class BotService {
     public ResponseEntity<Preferences> getPreferences() {
 
         ///  to do : buscar do banco
+        return ResponseEntity.ok(null);
+    }
+
+    // Pega as promos
+    // rodar primeiro o job do grupo
+    // depois rodar o bot para assinantes
+    // pensar em precificação, como sei que aquela passagem ta barata
+    // selecionar destinos mais procurados?
+    public ResponseEntity<Voos> searchPromos() {
+        // TO DO: Buscar no banco de dados preferências
+
+
+
+        // API SKICANNER
+        // Mandar essas preferências para o API
+
+        /// RETORNO API SKYSCANNER
+
+        // MAPEAR OS CAMPOS E RETORNAR
+
         return ResponseEntity.ok(null);
     }
 }

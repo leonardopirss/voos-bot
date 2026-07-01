@@ -5,15 +5,13 @@ import com.bot.pass.dto.Preferences;
 import com.bot.pass.dto.Voos;
 import com.bot.pass.service.BotService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
 @Controller
 @AllArgsConstructor
 public class BotController implements BotControllerImpl {
-
-    @Autowired
+    // https://developers.skyscanner.net/docs/flights-live-prices/overview
     private final BotService botService;
 
     @Override
@@ -33,6 +31,6 @@ public class BotController implements BotControllerImpl {
 
     @Override
     public ResponseEntity<Voos> searchPromos() {
-        return null;
+        return botService.searchPromos();
     }
 }
